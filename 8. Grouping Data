@@ -1,1 +1,50 @@
+/*
+AVG
+COUNT
+MIN
+MAX
+SUM
+*/
+
+SELECT MAX(salary)
+FROM EMPLOYEES
+
+
+
+SELECT MAX(salary), MIN(salary), ROUND(AVG(salary)
+FROM EMPLOYEES
+
+SELECT COUNT(*)
+FROM departments
+
+SELECT SUM(salary)
+FROM employees
+
+SELECT department_id, COUNT(*) AS num_employees
+FROM employees
+GROUP BY department_id
+ORDER BY num_employees DESC
+
+SELECT department_id, ROUND(AVG(salary)), MIN(salary), MAX(salary)
+FROM employees
+GROUP BY department_id
+
+
+
+SELECT department_id, ROUND(AVG(salary)), MIN(salary), MAX(salary)
+FROM employees
+GROUP BY department_id
+ORDER BY department_id 
+
+SELECT department_id, ROUND(AVG(salary))
+FROM employees
+GROUP BY department_id
+HAVING AVG(salary) > 90000
+
+SELECT department_id, ROUND(AVG(salary)), MAX(salary)
+FROM employees
+GROUP BY department_id
+HAVING AVG(salary) > 90000 AND MAX(salary) > 15000
+
+
 
