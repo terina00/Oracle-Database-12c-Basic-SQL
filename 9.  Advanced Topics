@@ -1,0 +1,57 @@
+CREATE TABLE demo_table2 (col1 number(5) primary key, col2 varchar2(20))
+
+insert into demo_table2 values (1, 'Hello)
+
+insert into demo_table2 values (2, 'Hello)
+
+
+insert into demo_table2 (col1) values (4)
+
+CREATE TABLE demo_table3 (col1 number(5) primary key, col2 varchar2(20) not null)
+
+CREATE TABLE demo_table_new
+(Id number(4), name varchar2(50))
+CONSTRAINT check_uppercase_name
+CHECK name = uppern(name))
+
+INSERT INTO demo_table_new values (1, 'PICARD')
+INSERT INTO demo_table_new values (2, 'picard') -- FAILED
+
+CREATE TABLE suppliers
+(id number(10) primary key,
+name varchar2(50) not null
+)
+
+CREATE TABLE products
+(id number(10) not null,
+name varchar2(50) not null.
+CONSTRAINT fk_supplier FOREIGN KEY (supplier_id) REFERENCES suppliers(id)
+)
+
+INSERT INTO suppliers VALUES (1, 'linkedIn')
+
+INSERT INTO products (values (20, 'Oracle Training', 1)
+
+INSERT INTO products (values (30, 'Banana', 2) --FAILED
+
+
+INSERT INTO suppliers VALUES (2, 'Market')
+
+
+
+SELECT *
+FROM employees
+WHERE department_id = (
+SELECT department_id 
+FROM departments 
+WHERE department_name = 'Marketing')
+;
+
+
+SELECT *
+FROM (SELECT first_name, last_name 
+FROM employees WHERE salary > 10000
+)
+
+
+
