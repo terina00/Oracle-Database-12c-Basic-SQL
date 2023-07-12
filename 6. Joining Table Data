@@ -1,1 +1,43 @@
 
+
+SELECT employees.first_name, employees.last_name, departments.department_name
+FROM employees
+JOIN departments ON employees.department_id = departments.department_id
+
+
+
+SELECT employees.first_name, employees.last_name, departments.department_name
+FROM employees
+INNER JOIN departments ON employees.department_id = departments.department_id
+ 
+
+
+SELECT employees.first_name, employees.last_name, departments.department_name
+FROM employees
+LEFT JOIN departments ON employees.department_id = departments.department_id
+
+SELECT employees.first_name, employees.last_name, departments.department_name
+FROM employees
+RIGHT JOIN departments ON employees.department_id = departments.department_id
+
+SELECT employees.first_name, employees.last_name, departments.department_name
+FROM employees
+FULL JOIN departments ON employees.department_id = departments.department_id
+
+SELECT emp.first_name, emp.last_name, dept.department_name
+FROM employees emp 
+FULL JOIN departments dept ON emp.department_id = dept.department_id
+
+
+
+Oracle syntax
+
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e, departments d
+WHERE e.department_id = d.department_id
+
+
+//left join
+SELECT e.first_name, e.last_name, d.department_name
+FROM employees e, departments d
+WHERE e.department_id(+) = d.department_id
