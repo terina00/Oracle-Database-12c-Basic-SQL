@@ -1,0 +1,87 @@
+SELECT * 
+FROM employees
+
+SELECT first_name, last_name, salary
+FROM employees
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary > 10000
+
+
+SELECT first_name, last_name, salary, department_id
+FROM employees
+WHERE salary > 10000 AND (department_id = 100 OR department_id = 80)
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE first_name LIKE 'E%'
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salalry BETWEEN 5000 AND 10000
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE (salalry BETWEEN 5000 AND 10000) AND (department_id BETWEEEN 50 AND 80)
+
+SELECT first_name, last_name, job_id
+FROM employees
+WHERE job_id = 'IT_PROG' OR job_id = 'AD_VP'
+
+SELECT first_name, last_name, job_id
+FROM employees
+WHERE job_id IN ('IT_PROG', 'AD_VP')
+
+
+SELECT first_name, last_name, job_id
+FROM employees
+WHERE job_id NOT IN ('IT_PROG', 'AD_VP')
+
+SELECT first_name, last_name, salary, department_id
+FROM employees
+WHERE department_id IN (90, 100)
+
+SELECT * 
+FROM employees
+WHERE hire_date > to_date('01-JAN-2000', 'DD-MON-YYYY')
+
+
+
+SELECT first_name, last_name 
+FROM employees
+WHERE last_name = 'King' AND first_name = 'Steven'
+
+SELECT DISTINCT department_id
+FROM employees
+ORDER BY department_id
+
+SELECT DISTINCT department_id, salary
+FROM employees
+
+SELECT department_id, SUM(salary)
+FROM employees
+
+SELECT first_name, last_name, salary * 1.15, salary*.15 AS "bonus"
+FROM employees
+
+SELECT first_name, last_name, salary * 1.15 AS "Salary plus bonus", salary*.15 AS Bonus
+FROM employees
+
+
+SELECT first_name AS "Employee First Name", last_name  AS "Employee Last Name", salary AS * 1.15 AS "Salary plus bonus", salary*.15 AS Bonus
+FROM employees
+
+DESC employees
+
+SELECT first_name, last_name, salary
+FROM employees
+ORDER BY salary DESC
+
+SELECT first_name, last_name, salary, departmane_id
+FROM employees
+ORDER BY salary ASC, department_id ASC
+
+
+
+
