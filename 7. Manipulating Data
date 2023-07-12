@@ -1,1 +1,78 @@
+/* DML
+modifying exsisting data
+changing record information
+
+-insert
+-delete
+
+DDL
+CRUD opperations
+-can't rollback
+
+-truncate
+-alter
+*/
+
+
+CREATE TABLE test_table1
+(col1 varchar2(100), col2 number(5))
+
+INSERT INTO test_table1
+VALUES ('Hello', 4),
+('World', 5)
+
+
+INSERT INTO test_table1 (col1, col2)
+VALUES 
+('Foo', 1)
+
+COMMIT
+
+ROLLBACK
+
+INSERT INTO test_table1
+VALUES ('Test!', 7)
+
+COMMIT
+
+DELETE FROM test_table1 
+WHERE col2 = 7
+
+DELETE FROM test_table1 
+WHERE col1 = 'Hello'
+
+COMMIT
+
+
+DELETE FROM test_table1 
+WHERE col1 = 'test row!' AND col2 = 10
+
+
+
+UPDATE test_table1
+SET col1 = 'Updated value!'
+WHERE col2 = 11
+
+COMMIT
+
+
+insert into test_table1 values ('New row!', 1)
+
+insert into test_table1 values ('Another new row!', 2)
+
+UPDATE test_table1 set col1 = 'UPDATED!' where col2 = 2
+
+rollback
+
+truncate table test_table1
+
+alter table test_table add (col3 number(10))
+
+alter table test_table drop column col3
+
+
+
+
+
+
 
