@@ -1,1 +1,88 @@
 
+SELECT SUBSTR(job_title, 1, 5)
+FROM jobs
+
+SELECT first_name, LENGTH(first_name), last_name, LENGTH(last_name)
+FROM employees
+
+
+SELECT CONCAT(first_name, ' ', last_name)
+FROM employees
+
+
+SELECT CONCAT('First NAme: ', first_name), CONCAT('LAST NAME: ', last_name)
+FROM employees
+
+SELECT 'FIRST NAME: ' || first_name || '*******' || 'Last Name: ' || last_name
+FROM employees
+
+
+SELECT UPPER(first_name), LOWER(last_name)
+FROM employees
+
+SELECT first_name, last_name
+FROM employees
+WHERE UPPER(first_name) = 'DAVID'
+
+
+SELECT first_name, last_name, INSTR(phone_number, '650')
+FROM employees
+
+
+SELECT first_name, INSTR(first_name, 'a'), last_name
+FROM employees
+
+SELECT LPAD(first_name, 10, '*'), RPAD(last_name, 10, '*')
+FROM employees
+
+
+SELECT TO_CHAR(salary, 'L99G999')
+FROM employees
+
+SELECT first_name, TO_CHAR(hire_date, 'DD/MON/YYYY')
+FROM employees
+
+SELECT first_name, hire_date
+FROM employees
+WHERE TO_CHAR(hiredate, 'MON') = 'JAN'
+
+SELECT 'hello world'
+FROM dual
+
+
+SELECT UPPER('hello world')
+FROM dual
+
+
+SELECT ROUND(999.98765, 3)
+FROM duel
+
+SELECT TRUNC(999.98765, 3)
+FROM duel
+
+SELECT SYSDATE
+FROM dual
+
+SELECT TO_CHAR(SYSDATE, 'DD-MON-YYYYY HH24:MI:SS')
+FROM dual
+
+SELECT SYSTIMESTAMP
+FROM dual
+
+
+SELECT SYSTIMESTAMP, TO_CHAR(sysdate, 'DD-MON-YYYYY HH24:MI:SS')
+FROM dual
+
+SELECT SYSDATE, hire_date, ROUND(MONTHS_BETWEEN(sysdate, hire_date), 0)
+FROM employees
+
+SELECT SYSDATE, hire_date, ROUND(MONTHS_BETWEEN(sysdate, hire_date)/12, 0) AS 'Years Employed'
+FROM employees
+
+
+ADD_MONTHS
+
+SELECT SYSDATE, add_months(SYSDATE, 1), ADD_MONTHS(SYSDATE, 2), ADD_MONTHS(SYSDATE, 3)
+FROM dual
+
+
